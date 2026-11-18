@@ -2,8 +2,6 @@
 
 A practical IT operations portfolio project for a fictional 15-person consulting company. It demonstrates internal support, endpoint and asset administration, identity lifecycle, routine automation, incident troubleshooting and operational reporting.
 
-> **Status:** Scaffold and procedures in progress. Features are marked as planned until backed by implementation evidence. This repository does not claim that the services below are already deployed.
-
 ## Scenario
 
 Murzilli Consulting is modelled as a 15-employee company with a small IT function. The technician handles day-to-day support, basic systems administration, onboarding/offboarding coordination, asset records and escalation of security-sensitive events.
@@ -83,7 +81,3 @@ For each implemented task, record the objective, environment, configuration/comm
 - Sanitise screenshots: redact usernames, email addresses, serial numbers, tenant identifiers and secrets.
 - Do not expose GLPI publicly without access controls and TLS.
 - Confirm a script's target and impact before running it; use dry-run modes first.
-
-## Current status
-
-This initial commit contains the project plan, operating procedures, runbook starters and a non-destructive PowerShell baseline-check script. Add deployment evidence only after the corresponding work is actually performed.
