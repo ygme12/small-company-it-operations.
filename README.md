@@ -1,83 +1,61 @@
-# Small-Company IT Operations Lab
+# Northbridge Consulting — IT Operations Portfolio
 
-A practical IT operations portfolio project for a fictional 15-person consulting company. It demonstrates internal support, endpoint and asset administration, identity lifecycle, routine automation, incident troubleshooting and operational reporting.
+A practical IT operations portfolio built around a fictional 15-person consulting company. The project brings together service-desk workflows, endpoint and asset administration, identity lifecycle procedures, automation, incident handling, troubleshooting and operational reporting.
 
-## Scenario
+## Project scenario
 
-Murzilli Consulting is modelled as a 15-employee company with a small IT function. The technician handles day-to-day support, basic systems administration, onboarding/offboarding coordination, asset records and escalation of security-sensitive events.
+Northbridge Consulting is a fictional 15-employee organisation supported by a small IT function. The portfolio models the day-to-day work of an IT operations technician: handling employee requests, maintaining asset records, administering accounts, troubleshooting endpoints and documenting repeatable processes.
 
-## Objectives
+## What the portfolio covers
 
-- Operate a central helpdesk with a clear ticket lifecycle.
-- Record company devices and associate assets with users and tickets.
-- Standardise employee onboarding and offboarding.
-- Automate repeatable, low-risk Windows administration tasks with PowerShell.
-- Document troubleshooting procedures and escalation boundaries.
-- Produce monthly service-desk and asset reports.
+| Area | Deliverables |
+|---|---|
+| Service desk | GLPI installation and configuration guidance, ticket categories, priorities, workflows and lifecycle scenarios |
+| Asset management | 15-device asset register, inventory procedure and GLPI Agent collection approach |
+| Identity and access | Active Directory OU/group design, account management, onboarding and offboarding checklists |
+| Windows administration | PowerShell scripts for user creation, disabling accounts, user information, inventory collection and system health |
+| Linux administration | Linux health-check script and Linux troubleshooting guide |
+| Endpoint support | Windows, macOS and Linux troubleshooting guides |
+| Networking | Network architecture, segmentation and troubleshooting documentation |
+| Incident management | Incident examples, reusable incident template and resolution-record structure |
+| IT operations | IT policies, device-management procedures, monthly operations report and demonstration script |
 
 ## Technology
 
-| Area | Technology | Purpose |
-|---|---|---|
-| Service desk | GLPI | Requests, incidents, priorities, assignment, SLAs and reporting |
-| Asset inventory | GLPI + GLPI Agent | Hardware/software inventory and ticket-to-asset relationships |
-| Windows infrastructure | Windows Server 2025 | Lab identity and infrastructure services |
-| Identity | Active Directory Domain Services | Users, groups, OUs and account lifecycle |
-| Automation | PowerShell | Repeatable administration and validation |
-| Cloud infrastructure | Microsoft Azure | VM, networking, RBAC and monitoring practice |
-| Linux support | Ubuntu Server | Supporting service and troubleshooting practice |
-| Documentation | Markdown + GitHub | Runbooks, evidence and change history |
+- **GLPI** — service desk and asset management
+- **Windows Server / Active Directory / DNS** — identity and Windows infrastructure administration
+- **PowerShell** — repeatable Windows administration tasks
+- **Ubuntu Server / Bash** — Linux service administration and health checks
+- **Microsoft Azure** — cloud infrastructure and network design
+- **GitHub / Markdown / CSV** — versioned documentation, procedures and asset records
 
-**Environment boundary:** The Azure-hosted Windows Server 2025 environment and any separate physical Windows Server 2022 lab must be documented independently. Do not mix their IP addresses, domain details, screenshots or implementation claims.
+## Repository guide
 
-## Scope
+- `architecture/` — infrastructure overview, system architecture and network design
+- `glpi-ticketing/` — GLPI installation, configuration and ticket workflows
+- `asset-management/` — asset register and inventory procedure
+- `onboarding-offboarding/` — account lifecycle procedures and checklists
+- `powershell/` — Windows administration scripts
+- `linux-scripts/` — Linux health-check script
+- `troubleshooting/` — Windows, macOS, Linux and networking guides
+- `incident-management/` — incident examples and reusable records
+- `documentation/` — IT policies and operating procedures
+- `reports/` — IT operations reporting template
+- `PROJECT-TRACKER.md` — working checklist for the implementation guide
+- `RUNBOOK.md` — ordered technical guide for building and validating the lab
 
-### Service desk
-Ticket intake, categorisation, prioritisation, assignment, status tracking, internal notes, user updates, resolution, closure, asset association and basic SLA tracking. Work through the [ten ticket scenarios](docs/ticket-scenarios.md).
+## Lab environment
 
-### Endpoint and asset operations
-Maintain an asset register for laptops, desktops, monitors and peripherals. Record asset tag, hostname, OS, serial number, owner, status and assignment history. Use GLPI Agent where supported.
+The lab uses an existing Windows Server domain controller identified in the runbook as `YG-DC01`. The fictional company domain is `northbridge.lab`; substitute the actual lab domain where the runbook instructs. The Azure and local lab environments must be documented separately.
 
-### Identity lifecycle
-Define a simple OU and group structure; document joiner, mover and leaver procedures; apply least privilege; verify access removal during offboarding. Use test accounts only.
+## How to review the project
 
-### PowerShell
-Create safe, parameterised scripts for account checks, inventory export and operational validation. Include input validation, logging, error handling and dry-run support for state-changing actions.
+Start with `RUNBOOK.md` for the end-to-end build sequence, then review the individual folders for the procedures, scripts, architecture documents and operational templates. The tracker is an internal implementation aid; it is not a summary of portfolio deliverables.
 
-### Operations documentation
-Maintain troubleshooting runbooks, access request and approval procedures, change records and monthly reporting.
+## Security and evidence
 
-## Repository map
-
-```text
-.
-├── README.md
-├── architecture/
-├── docs/
-├── powershell/
-├── runbooks/
-├── evidence/
-└── reports/
-```
-
-## Implementation sequence
-
-1. Document lab topology and environment boundaries.
-2. Deploy/configure GLPI and create the service catalogue.
-3. Add assets and configure inventory collection.
-4. Configure the test identity environment and lifecycle procedures.
-5. Implement and test PowerShell operational scripts.
-6. Complete the ten ticket scenarios and capture evidence.
-7. Produce a monthly service-desk report and lessons learned.
-
-## Evidence standard
-
-For each implemented task, record the objective, environment, configuration/commands (without secrets), sanitised screenshot or output, validation performed, issues encountered and resolution. A screenshot alone is not proof of a working service.
-
-## Safety and privacy
-
-- Use fictional users and test data only.
-- Never commit passwords, API keys, tokens, private keys, connection strings or real personal data.
-- Sanitise screenshots: redact usernames, email addresses, serial numbers, tenant identifiers and secrets.
-- Do not expose GLPI publicly without access controls and TLS.
-- Confirm a script's target and impact before running it; use dry-run modes first.
+- Use fictional employee records and test data.
+- Never commit passwords, keys, tokens, private keys or real personal data.
+- Redact IP addresses, subscription identifiers, tenant identifiers and personal information from evidence.
+- Review scripts before execution and test state-changing operations in an isolated lab.
+- Distinguish documented procedures from actions actually executed in the lab when describing implementation experience.
