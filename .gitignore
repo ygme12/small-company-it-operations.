@@ -1,0 +1,28 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+secrets/
+credentials/
+config.local.*
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.tmp
+*.log
+
+# VM and disk artifacts
+*.vhd
+*.vhdx
+*.vmdk
+*.ova
+*.iso
+*.qcow2
